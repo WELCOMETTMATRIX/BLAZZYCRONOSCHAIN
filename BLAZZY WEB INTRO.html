@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blazzy Token Ecosystem</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://ipfs.io/ipfs/QmaGjJR9WbEqcbZWTqut64iJfZ33PepcNBtsFwai7mZnKZ?filename=HH.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ffcc;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 1200px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #0077ff, #00ffcc);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 255, 204, 0.5);
+        }
+
+        h2 {
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Custom Styles for Each Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-header h1 {
+            font-size: 2rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-buttons .button {
+            padding: 10px 20px;
+        }
+
+        .form-input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #00ffcc;
+            border-radius: 5px;
+            background: transparent;
+            color: white;
+        }
+
+        .form-button {
+            background: #00ffcc;
+            padding: 10px 20px;
+            color: black;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .form-button:hover {
+            background: #0077ff;
+        }
+
+        .hidden-form {
+            display: none;
+        }
+
+        .post-list {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .post-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+        }
+
+        .post-item h3 {
+            color: #00ffcc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a onclick="showTab('home')">Home</a></li>
+            <li><a onclick="showTab('exchanges')">Exchanges</a></li>
+            <li><a onclick="showTab('information')">Information</a></li>
+            <li><a onclick="showTab('stake')">Stake</a></li>
+            <li><a onclick="showTab('social-media')">Social Media</a></li>
+            <li><a onclick="showTab('explorer')">Explorer</a></li>
+            <li><a onclick="showTab('team-airdrop')">Team Airdrop</a></li>
+            <li><a onclick="showTab('community-airdrop')">Community Airdrop</a></li>
+            <li><a onclick="showTab('music')">Music Blazzy</a></li>
+            <li><a onclick="showTab('video')">Video Blazzy</a></li>
+            <li><a onclick="showTab('blog')">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="home" class="content active">
+        <iframe height="100%" width="100%" id="geckoterminal-embed" title="GeckoTerminal Embed"
+            src="https://www.geckoterminal.com/es/cro/pools/0x5f028f49a7443f34aedfc19ed986c92243d98ef5?embed=1&info=1&swaps=1&grayscale=1&light_chart=1"></iframe>
+    </div>
+
+    <div id="exchanges" class="content">
+        <h2>Exchanges</h2>
+        <button class="button" onclick="window.open('https://app.cronaswap.org/add/CRO/0x9Ef3fc220867F6cF5655Db3d950cDA67A3a92F9f', '_blank')">Cronaswap</button>
+        <button class="button" onclick="window.open('https://www.geckoterminal.com/es/cro/pools/0x5f028f49a7443f34aedfc19ed986c92243d98ef5', '_blank')">GeckoTerminal</button>
+    </div>
+
+    <div id="information" class="content">
+        <h2>Information</h2>
+        <p><strong>Token Address:</strong> [Token Address]</p>
+        <p><strong>Supply:</strong> 1 Billion Tokens</p>
+        <p><strong>Decimals:</strong> 18</p>
+        <p><strong>Liquidity Pool:</strong> 845,000,000</p>
+        <button class="button" onclick="window.open('https://memexcorp.gitbook.io/blazzy/blazzy-cro-token', '_blank')">GitBook</button>
+        <button class="button" onclick="window.open('https://github.com/WELCOMETTMATRIX/BLAZZY', '_blank')">GitHub</button>
+    </div>
+
+    <div id="stake" class="content">
+        <h2>Stake Blazzy</h2>
+        <p>Staking rewards: 2,000,000 BLZ</p>
+        <button class="button" onclick="window.open('https://www.team.finance/view-coin/0x9ef3fc220867f6cf5655db3d950cda67a3a92f9f?name=BLAZZY%20&symbol=BLZ&chainid=0x19&_gl=1*o9yhdi*_gcl_au*MTE0OTgyNjg3NC4xNzMzNDM5MzA2', '_blank')">Stake Now</button>
+    </div>
+
+    <div id="social-media" class="content">
+        <h2>Social Media</h2>
+        <div class="social-buttons">
+            <button class="button" onclick="window.open('https://discord.com/invite/TQhtGG24pP', '_blank')">Discord</button>
+            <button class="button" onclick="window.open('https://t.me/+6uqs-4CqjrpjZWFh', '_blank')">Telegram</button>
+            <button class="button" onclick="window.open('https://x.com/BLIZZYCRO', '_blank')">Twitter</button>
+            <button class="button" onclick="window.open('https://linktr.ee/BLAZZYCRO', '_blank')">LinkTree</button>
+        </div>
+    </div>
+
+    <div id="explorer" class="content">
+        <h2>Explorer</h2>
+        <button class="button" onclick="window.open('https://welcomettmatrix.github.io/WEBTRACK/', '_blank')">Blazzy Explorer</button>
+        <button class="button" onclick="window.open('https://cronoscan.com/address/0x9Ef3fc220867F6cF5655Db3d950cDA67A3a92F9f', '_blank')">Cronoscan</button>
+    </div>
+
+    <div id="team-airdrop" class="content">
+        <h2>Team Airdrop</h2>
+        <p>10,000,000 tokens available for the team</p>
+        <button class="button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd_76sdcElqjIVuheFGxLNoL8fr38EgAq5izCsydM_K7tDC_Q/viewform', '_blank')">Apply Now</button>
+    </div>
+
+    <div id="community-airdrop" class="content">
+        <h2>Community Airdrop</h2>
+        <p>45,000,000 tokens giveaway</p>
+        <button class="button" onclick="window.open('https://taskon.xyz/quest/790757682', '_blank')">Join Airdrop</button>
+    </div>
+
+    <div id="music" class="content">
+        <h2>Music Blazzy</h2>
+        <input class="form-input" type="text" id="music-key" placeholder="Enter secret key to post music">
+        <button class="button" onclick="checkKey('music')">Post Music</button>
+        <p>Join Telegram for a secret key to post music.</p>
+        <div id="posted-music" class="post-list"></div>
+    </div>
+
+    <div id="video" class="content">
+        <h2>Video Blazzy</h2>
+        <input class="form-input" type="text" id="video-key" placeholder="Enter secret key to post video">
+        <button class="button" onclick="checkKey('video')">Post Video</button>
+        <p>Join Discord for a secret key to post videos.</p>
+        <div id="posted-videos" class="post-list"></div>
+    </div>
+
+    <div id="blog" class="content">
+        <h2>Blog</h2>
+        <input class="form-input" type="text" id="blog-key" placeholder="Enter secret key to post blog">
+        <textarea class="form-input" id="blog-content" rows="4" placeholder="Enter your blog content here..."></textarea>
+        <button class="button" onclick="checkKey('blog')">Post Blog</button>
+        <div id="posted-blogs" class="post-list"></div>
+    </div>
+
+    <script>
+        const secretKey = 'BLAZZYCRONOSCHAINBLOCK119';
+
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function checkKey(type) {
+            let inputKey;
+            let contentField;
+            let message;
+            let postedField;
+
+            if (type === 'music') {
+                inputKey = document.getElementById('music-key').value;
+                contentField = 'music';
+                message = "Music post was successful!";
+                postedField = 'posted-music';
+            } else if (type === 'video') {
+                inputKey = document.getElementById('video-key').value;
+                contentField = 'video';
+                message = "Video post was successful!";
+                postedField = 'posted-videos';
+            } else if (type === 'blog') {
+                inputKey = document.getElementById('blog-key').value;
+                contentField = 'blog';
+                message = "Blog post was successful!";
+                postedField = 'posted-blogs';
+            }
+
+            if (inputKey === secretKey) {
+                alert(message);
+
+                // Add content to the respective list
+                const content = document.getElementById(contentField + '-content').value;
+                const postList = document.getElementById(postedField);
+                const postItem = document.createElement('div');
+                postItem.classList.add('post-item');
+                postItem.innerHTML = `<h3>New ${type.charAt(0).toUpperCase() + type.slice(1)} Post:</h3><p>${content}</p>`;
+                postList.appendChild(postItem);
+
+                // Clear content after posting
+                document.getElementById(contentField + '-content').value = '';
+            } else {
+                alert("Incorrect key. Please try again.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
